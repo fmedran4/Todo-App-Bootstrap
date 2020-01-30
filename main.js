@@ -1,13 +1,17 @@
-const todos = document.querySelectorAll('.list-group-item');
+const fixHover = () => {
+    const todos = document.querySelectorAll('.list-group-item');
 
-todos.forEach(todo => {
-  todo.addEventListener('mouseover', () => {
-    todo.classList.add('active');
-  });
-  todo.addEventListener('mouseleave', () => {
-    todo.classList.remove('active');
-  });
-});
+    todos.forEach(todo => {
+        todo.addEventListener('mouseover', () => {
+            todo.classList.add('active');
+        });
+        todo.addEventListener('mouseleave', () => {
+            todo.classList.remove('active');
+        });
+    });
+}
+
+fixHover();
 
 const get = element => document.getElementById(element);
 
