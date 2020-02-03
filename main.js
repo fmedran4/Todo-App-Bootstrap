@@ -32,3 +32,25 @@ newBtn.addEventListener('click', () => {
     alert('Please provide a Task to Add');
   }
 });
+
+newText.addEventListener("keyup", event => {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    newBtn.click();
+  }
+});
+
+const move = (element, destination) => {
+  if (element.LocalName == "li") {
+    destination.appendChild(element);
+    element.classList.remove("active");
+  }
+};
+
+pendingList.addEventListener("click", event => {
+  move(event.target, completedList);
+});
+
+completedList.addEventListener("click", event => {
+  move(event.target, pendingList);
+});
