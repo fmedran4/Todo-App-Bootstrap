@@ -1,35 +1,35 @@
 const fixHover = () => {
-    const todos = document.querySelectorAll('.list-group-item');
+  const todos = document.querySelectorAll(".list-group-item");
 
-    todos.forEach(todo => {
-        todo.addEventListener('mouseover', () => {
-            todo.classList.add('active');
-        });
-        todo.addEventListener('mouseleave', () => {
-            todo.classList.remove('active');
-        });
+  todos.forEach(todo => {
+    todo.addEventListener("mouseover", () => {
+      todo.classList.add("active");
     });
-}
+    todo.addEventListener("mouseleave", () => {
+      todo.classList.remove("active");
+    });
+  });
+};
 
 fixHover();
 
 const get = element => document.getElementById(element);
 
-const newText = get('newText');
-const newBtn = get('getBtn');
-const pendingList = get('pendingList');
-const completedList = get('completdList');
+const newText = get("newText");
+const newBtn = get("newBtn");
+const pendingList = get("pendingList");
+const completedList = get("completedList");
 
-newBtn.addEventListener('click', () => {
-  if (newText.value != '') {
-    const newTodo = document.createElement('li');
-    newTodo.classList.add('list-group-item');
+newBtn.addEventListener("click", () => {
+  if (newText.value != "") {
+    const newTodo = document.createElement("li");
+    newTodo.classList.add("list-group-item");
     newTodo.innerHTML = newText.value;
-    newText.value = '';
+    newText.value = "";
     pendingList.appendChild(newTodo);
     fixHover();
   } else {
-    alert('Please provide a Task to Add');
+    alert("Please provide a Task to Add");
   }
 });
 
@@ -41,7 +41,7 @@ newText.addEventListener("keyup", event => {
 });
 
 const move = (element, destination) => {
-  if (element.LocalName == "li") {
+  if (element.localName == "li") {
     destination.appendChild(element);
     element.classList.remove("active");
   }
