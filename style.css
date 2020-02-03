@@ -10,6 +10,6 @@
 }
 
 .completed li.active {
-  background: red;
-  border: 1px solid red;
+  background: green;
+  border: 1px solid green;
 }
